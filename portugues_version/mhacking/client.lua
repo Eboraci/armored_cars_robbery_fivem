@@ -172,12 +172,11 @@ end
 function dinheiro_tick(variavel, variavel_2)
   for i=0, 6, 1 do
     if GetVehicleDoorAngleRatio(variavel, 2) > .1 or GetVehicleDoorAngleRatio(variavel, 3) > .1 then
-      local ped = PlayerPedId()
       GetEntityCoords(variavel, 1)
       local a,b,c = table.unpack((GetEntityCoords(variavel_2)))
       local x,y,z = table.unpack(GetEntityCoords(variavel))
       dinheiro_carrof = CreateAmbientPickup(GetHashKey("PICKUP_MONEY_SECURITY_CASE"), GetOffsetFromEntityInWorldCoords(variavel, 0.0, -5.0, -0.3001), 0, 300000) 
-      ClearAllBlipRoutes())
+      ClearAllBlipRoutes()
       Wait(15000)
       AddExplosion(x, y, z, 8, 100.0, true, false, 10.0)
       AddExplosion(a, b, c, 8, 100.0, true, false, 10.0)
