@@ -10,7 +10,9 @@ local carro_segurancas_hash = GetHashKey('cognoscenti2')
 
 local local_hack_x = 1275.682
 local local_hack_y = -1710.426
-local local_hack_z = 54.771   
+local local_hack_z = 54.771 
+
+local quantia = 300000
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- HACKEANDO
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -160,7 +162,7 @@ function dinheiro_tick(variavel, variavel_2)
       GetEntityCoords(variavel, 1)
       local a,b,c = table.unpack((GetEntityCoords(variavel_2)))
       local x,y,z = table.unpack(GetEntityCoords(variavel))
-      dinheiro_carrof = CreateAmbientPickup(GetHashKey("PICKUP_MONEY_SECURITY_CASE"), GetOffsetFromEntityInWorldCoords(variavel, 0.0, -5.0, -0.3001)) 
+      dinheiro_carrof = CreateAmbientPickup(GetHashKey("PICKUP_MONEY_SECURITY_CASE"), GetOffsetFromEntityInWorldCoords(variavel, 0.0, -5.0, -0.3001), 0, 300000) 
       ClearPedTasks(ped)
       Wait(15000)
       AddExplosion(x, y, z, 8, 100.0, true, false, 10.0)
