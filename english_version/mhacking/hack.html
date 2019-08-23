@@ -95,7 +95,7 @@
 		if (now >= endTime) {
 			clearInterval(thread);
 			$( '#infobox' ).fadeOut().text('Failure').fadeIn();
-			setBigMsg('Falha');
+			setBigMsg('Failure');
 			setTimeout(function(){
 				fadeBigMsg(true);
 				playSound('audiofail',1);
@@ -260,7 +260,7 @@
 
 			if ('start' in item) {
 				if('s' in item && 'd' in item) {
-					setBigMsg('<span class="flash">Começando o hack...</span><br /><span class="small">Ache os blocos constantes</span>');
+					setBigMsg('<span class="flash">Starting Hack...</span><br /><span class="small">Find the constant code blocks</span>');
 					playSound('audiostart',1);
 					$('.flash').fadeOut().fadeIn().fadeOut().fadeIn().fadeOut().fadeIn();
 					setTimeout(function(){fadeBigMsg(false); startGame(item.s,item.d);}, 3000);
