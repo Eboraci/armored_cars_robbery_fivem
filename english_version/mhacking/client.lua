@@ -73,6 +73,7 @@ end
 function mycb(successo)
   if successo then
     local ped = PlayerPedId()
+    TriggerEvent('chatMessage', "The route of the armored car was set on your gps, intercept him.")
     TriggerEvent('mhacking:hide')
     DoScreenFadeIn(1000)
     Wait(1350)
@@ -175,8 +176,8 @@ function dinheiro_tick(variavel, variavel_2)
       dinheiro_carrof = CreateAmbientPickup(GetHashKey("PICKUP_MONEY_SECURITY_CASE"), GetOffsetFromEntityInWorldCoords(variavel, 0.0, -5.0, -0.3001), 0, 300000) 
       ClearAllBlipRoutes()
       Wait(15000)
-      AddExplosion(x, y, z, 8, 100.0, true, false, 10.0)
-      AddExplosion(a, b, c, 8, 100.0, true, false, 10.0)
+      --AddExplosion(x, y, z, 8, 100.0, true, false, 10.0)
+      --AddExplosion(a, b, c, 8, 100.0, true, false, 10.0)
       break
     end
   end
