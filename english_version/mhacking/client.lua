@@ -38,6 +38,20 @@ Citizen.CreateThread(function()
   end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- BLIP LESTER
+-----------------------------------------------------------------------------------------------------------------------------------------
+Citizen.CreateThread(function()
+    local blip_l = AddBlipForCoord(1275.682,-1710.426,54.771)
+    SetBlipSprite(blip_l, 77)
+    SetBlipDisplay(blip_l, 4)
+    SetBlipScale(blip_l, 0.7)
+    SetBlipColour(blip_l, 1)
+    SetBlipAsShortRange(blip_l, true)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentString('Lester')
+    EndTextCommandSetBlipName(blip_l)
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- FUNCTIONS
 -----------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -86,8 +100,8 @@ function mycb(successo)
     SetBlipColour(blip_carrof, 36)
     SetBlipRoute(blip_carrof, true)
     SetBlipRouteColour(blip_carrof, 2)
-    TaskVehicleDriveToCoordLongrange(seguranca_spw, carrof_spw, -97.805, -869.55, 26.813, 20.0, 447, 1) --Coords of where the vehicle will go
-    TaskVehicleDriveToCoordLongrange(seguranca_spw_3, carros_spw, -97.805, -869.55, 26.813, 20.0, 447, 1)
+    TaskVehicleDriveToCoordLongrange(seguranca_spw, carrof_spw, 1847.96, 2608.26, 45.59, 20.0, 447, 1) --Coords of where the vehicle will go
+    TaskVehicleDriveToCoordLongrange(seguranca_spw_3, carros_spw, 1847.96, 2608.26, 45.59, 20.0, 447, 1)
     while true do
       Wait(0)
       if GetVehicleBodyHealth(carrof_spw) < 5.0 then
