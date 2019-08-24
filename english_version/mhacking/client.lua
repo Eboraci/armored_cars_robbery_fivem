@@ -148,6 +148,7 @@ function mycb(successo, temporestante)
     DoScreenFadeIn(1000)
     Wait(1350)
     ClearPedTasks(ped)
+    hackeando = false
   end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -205,8 +206,8 @@ function dinheiro_tick(variavel, variavel_2, variavel_3)
     if GetVehicleDoorAngleRatio(variavel, 2) > .1 or GetVehicleDoorAngleRatio(variavel, 3) > .1 and flag == 0 then
       flag = 1
       GetEntityCoords(variavel, 1)
-      local a,b,c = table.unpack((GetEntityCoords(variavel_2)))
-      local d,e,f = table.unpack((variavel_3))
+      local a,b,c = table.unpack(GetEntityCoords(variavel_2))
+      local d,e,f = table.unpack(GetEntityCoords(variavel_3))
       local x,y,z = table.unpack(GetEntityCoords(variavel))
       dinheiro_carrof = CreateAmbientPickup(GetHashKey("PICKUP_MONEY_SECURITY_CASE"), GetOffsetFromEntityInWorldCoords(variavel, 0.0, -5.0, -0.3001), 0, 300000) 
       ClearAllBlipRoutes()
