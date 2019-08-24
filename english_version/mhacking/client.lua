@@ -28,6 +28,7 @@ Citizen.CreateThread(function()
 						Wait(10)
           end
           SetEntityHeading(ped,310.46)
+	  TaskPlayAnim(ped,'anim@heists@prison_heistig1_p1_guard_checks_bus','loop',8.0,8.0,-1,1,0,false,false,false)
           TaskPlayAnim(ped,'anim@heists@prison_heistig1_p1_guard_checks_bus','loop',8.0,8.0,-1,1,0,false,false,false)
           Wait(1500)
           DoScreenFadeOut(1000)
