@@ -213,10 +213,10 @@ function dinheiro_tick(variavel, variavel_2, variavel_3)
       dinheiro_carrof = CreateAmbientPickup(GetHashKey("PICKUP_MONEY_SECURITY_CASE"), GetOffsetFromEntityInWorldCoords(variavel, 0.0, -5.0, -0.3001), 0, 300000) 
       ClearAllBlipRoutes()
       func.pagamento()
-      Wait(20000)
-      AddExplosion(x, y, z, 8, 100.0, true, false, 10.0)
-      AddExplosion(a, b, c, 8, 100.0, true, false, 10.0)
-      AddExplosion(d, e, f, 8, 100.0, true, false, 10.0)
+      Wait(9000)
+      DeleteEntity(variavel)
+      DeleteEntity(variavel_2)
+      DeleteEntity(variavel_3)
       hackeando = false
       break
     end
