@@ -13,6 +13,7 @@ local local_hack_y = -1710.426
 local local_hack_z = 54.771 
 
 local quantia = 300000
+local hackeando = false
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- HACKEANDO
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -21,20 +22,20 @@ Citizen.CreateThread(function()
     Citizen.Wait(1)
       local ped = PlayerPedId()
       local distancia_hack = GetDistanceBetweenCoords(GetEntityCoords(ped), local_hack_x, local_hack_y, local_hack_z)
-      if distancia_hack <=1 and not IsEntityDead(ped) then
+      if distancia_hack <=1 and not IsEntityDead(ped) and not hackeando then
         drawTxt("PRESSIONE  ~b~E~w~  PARA HACKEAR",4,0.5,0.93,0.50,255,255,255,180)
         if IsControlJustPressed(0, 38) and (UpdateOnscreenKeyboard() ~= 0)then
           RequestAnimDict('anim@heists@prison_heistig1_p1_guard_checks_bus')
           while not HasAnimDictLoaded('anim@heists@prison_heistig1_p1_guard_checks_bus') do
-						Wait(10)
+	  Wait(10)
           end
           SetEntityHeading(ped,310.46)
 	  TaskPlayAnim(ped,'anim@heists@prison_heistig1_p1_guard_checks_bus','loop',8.0,8.0,-1,1,0,false,false,false)
-          TaskPlayAnim(ped,'anim@heists@prison_heistig1_p1_guard_checks_bus','loop',8.0,8.0,-1,1,0,false,false,false)
           Wait(1500)
           DoScreenFadeOut(1000)
           TriggerEvent('mhacking:show')
           TriggerEvent('mhacking:start',7,20,mycb)
+	  hackeando = true
         end
       end
   end
@@ -127,6 +128,7 @@ function mycb(successo, temporestante)
     TaskVehicleDriveToCoordLongrange(seguranca_spw, carrof_spw, 1847.96, 2608.26, 45.59, 16.0, 447, 1)
     TaskVehicleDriveToCoordLongrange(seguranca_spw_3, carros_spw, 1847.96, 2608.26, 45.59, 16.0, 447, 1)
     TaskVehicleDriveToCoordLongrange(seguranca_spw_7, carros_spw_2, 1847.96, 2608.26, 45.59, 16.0, 447, 1)
+    hackeando = false
     while true do
       local final = { 1847.96, 2608.26, 45.59 }
       Wait(0)
