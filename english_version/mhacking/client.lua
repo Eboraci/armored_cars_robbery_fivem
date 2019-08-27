@@ -34,6 +34,7 @@ Citizen.CreateThread(function()
           DoScreenFadeOut(1000)
           TriggerEvent('mhacking:show')
           TriggerEvent('mhacking:start',7,20,mycb)
+	  hacking = true
         end
       end
   end
