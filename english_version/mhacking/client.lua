@@ -160,7 +160,7 @@ function setupModelo(modelo)
   RequestModel(modelo)
   while not HasModelLoaded(modelo) do
     RequestModel(modelo)
-    Wait(10)
+    Wait(50)
   end
   SetModelAsNoLongerNeeded(modelo)
 end
